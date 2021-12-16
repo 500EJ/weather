@@ -29,11 +29,11 @@ main {
     margin-bottom: 65px;
 }
 
-.current-temp {
+#main-temp:first-child {
     font-size: 75px;
 }
 
-.range {
+.description {
     display: flex;
     font-size: 25px;
 }

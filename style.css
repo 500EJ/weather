@@ -49,20 +49,12 @@ main {
     margin-bottom: 65px;
 }
 
-.day {
-    border-left: 1px solid black;
-}
-
-.day:first-child {
-    border: none;
-}
-
 .day p {
     font-size: 30px;
 }
 
 .condition-img {
-    width: 50%;
+    width: 6em;
 }
 
 #hourly {
@@ -71,14 +63,11 @@ main {
     margin-bottom: 65px;
 }
 
-.hour {
-    border-left: 1px solid black;
-}
-
-.hour:first-child {
-    border: none;
-}
-
 .hour p {
     font-size: 30px;
+}
+
+.border {
+    width: 1px;
+    background-color: black;
 }

@@ -1,7 +1,7 @@
 let GRIDPOINTS_DAY_URL;
 let GRIDPOINTS_HOURLY_URL;
 
-function getForecastURL(callback) {
+function getForecastURL() {
   let latitude = 40.7863;
   let longitude = -74.3301;
   const POINTS_URL = `https://api.weather.gov/points/${latitude},${longitude}`;
@@ -17,7 +17,7 @@ function getForecastURL(callback) {
       let center = processedResponse.properties.gridId;
       GRIDPOINTS_DAY_URL = `https://api.weather.gov/gridpoints/${center}/${gridX},${gridY}/forecast`;
       GRIDPOINTS_HOURLY_URL = `https://api.weather.gov/gridpoints/${center}/${gridX},${gridY}/forecast/hourly`;
-      callback();
+      setTemperatures();
     });
 }
 
@@ -40,4 +40,4 @@ function setTemperatures() {
     });
 }
 
-getForecastURL(setTemperatures);
+getForecastURL();

@@ -8,7 +8,6 @@ body {
     margin-top: 30px;
     font-family: Roboto, sans-serif;
     background-color: #1CA7ED;
-    /* color: white; */
     text-align: center;
 }
 
@@ -45,6 +44,7 @@ main {
 
 #days {
     display: flex;
+    /* flex-wrap: wrap; */
     justify-content: space-evenly;
     margin-bottom: 65px;
 }
@@ -55,6 +55,7 @@ main {
 
 .condition-img {
     width: 6em;
+    padding: 10px 0;
 }
 
 #hourly {

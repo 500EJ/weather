@@ -36,6 +36,26 @@ function setTemperatures() {
       document.querySelector(".description").innerText = detailedForecast ? detailedForecast : processedResponse.properties.periods[0].shortForecast;
       document.querySelectorAll(".hour").forEach(function (hour, i) {
         hour.querySelector("p").innerText = periods[i].temperature + hour.querySelector("p").innerText;
+        hour.querySelector("img").setAttribute("src", periods[i].icon);
+        let times = periods[i].startTime.split("T");
+        hour.querySelector("h3").innerText = times[1].split("-")[0];
+        setDayForecast();
+      })
+    });
+}
+
+function setDayForecast() {
+  const promise = fetch(GRIDPOINTS_DAY_URL);
+  promise
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (processedResponse) {
+      document.querySelectorAll(".day").forEach(function (day, i) {
+        let periods = processedResponse.properties.periods
+        day.querySelector("h3").innerText = periods[i].name
+        day.querySelector("img").setAttribute("src", periods[i].icon)
+        day.querySelector("p").innerText = periods[i].temperature + "°";
       })
     });
 }

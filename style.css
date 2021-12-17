@@ -44,12 +44,12 @@ main {
 
 #days {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: space-evenly;
     margin-bottom: 65px;
+    flex-wrap: wrap;
 }
 
-.day p {
+.day .temperature {
     font-size: 30px;
 }
 
@@ -61,6 +61,7 @@ main {
 #hourly {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     margin-bottom: 65px;
 }
 

@@ -35,9 +35,9 @@ function setTemperatures() {
       let periods = processedResponse.properties.periods;
       document.querySelector(".description").innerText = detailedForecast ? detailedForecast : processedResponse.properties.periods[0].shortForecast;
       document.querySelectorAll(".hour").forEach(function (hour, i) {
-        hour.querySelector(".temperature").innerText = periods[i].temperature + hour.querySelector("p").innerText;
-        hour.querySelector("img").setAttribute("src", periods[i].icon);
-        let times = periods[i].startTime.split("T");
+        hour.querySelector(".temperature").innerText = periods[i + 1].temperature + hour.querySelector("p").innerText;
+        hour.querySelector("img").setAttribute("src", periods[i + 1].icon);
+        let times = periods[i + 1].startTime.split("T");
         hour.querySelector("h3").innerText = times[1].split("-")[0].slice(0, -3);
         setDayForecast();
       })
